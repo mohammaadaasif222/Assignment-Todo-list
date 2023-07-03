@@ -21,16 +21,14 @@ process.on('uncaughtException', (err) => {
 mongoose.set("strictQuery", true);
 connectDataBase();
 
+app.get('/',(req, res)=>{
+  res.json("hello world")
+})
 
-
-// cloudinary.config({
-//   cloude_name : process.env.CLOUDINARY_NAME,
-//   api_key :process.env.CLOUDINARY_API_KEY,
-//   api_secret:process.env.CLOUDINARY_API_SECRET
-// })
+const PORT = process.env.PORT || 5000
 
 // Server runnig 
-const server = app.listen(process.env.PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server is starting on port:${process.env.PORT} in ${process.env.NODE_ENV} mode`);
 });
 
