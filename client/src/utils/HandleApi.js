@@ -3,7 +3,7 @@ import axios from "axios";
 const baseUrl = "https://todo-server-qwgg.onrender.com/todos";
 
 const getAllToDo = (setToDo, query) => {
-  if (query === null || query ==='?isComplete=All') {
+  if (!query|| query ==='?isComplete=All') {
     axios.get(`${baseUrl}`).then(({ data }) => {
       setToDo(data.todos);
     });
