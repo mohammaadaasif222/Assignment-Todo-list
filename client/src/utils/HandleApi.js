@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:5000/todos";
+const baseUrl = "https://todo-server-qwgg.onrender.com/todos";
 
 const getAllToDo = (setToDo, query) => {
   if (query === null || query ==='?isComplete=All') {
